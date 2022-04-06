@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Notes</title>
+    <link rel="stylesheet" href="prism.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="prism.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <ol>
+      <li>
+        <h2><span class="serialNumber">ddddddddddd</span> JSX</h2>
+        <pre><code class="language-js">//JSX means Javascript XML.
+// It is 96% HTML and Rest Javasript.
+// Javasript Expression are written under { Expression } ( Curly Braces ). 
+// Expression is that which return any Value.
+// All HTML attributes and css styles in JSX are write using PascalCase. 
+
+// JSX Expression -: 
+<xmp><h1>Hello Molik , My age is {20 - 1}</h1></xmp>
+// Some Changes from HTML -> JSX
+    // 1) class -> className.
+    // 2) for -> htmlFor.
+    // 3) All self closing tags closed using /> rathar than >.
+</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> React Fragment</h2>
+        <pre><code class="language-js">// We can return only one element from Functional Component.
+// So either we use a div to enclose all code or using React Fragments.
+// React Fragments does not add extra element like div.
+
+// React Fragemnt -:
+<xmp><React.Fragment>
+    <h1>Hello</h1>
+    <h2>Hello Again</h2> 
+</React.Fragment></xmp>
+// React.Fragment written is Optional , It is same as -: 
+<xmp><>
+    <h1>Hello</h1>
+    <h2>Hello Again</h2> 
+</></xmp></code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> Css Style</h2>
+        <pre><code class="language-js">// We can add styles through className or,
+// We can use Javascript Object to add inline styles.
+// Property name must be in PascalCase.
+// Simple values is treated as in pixels ( px ).
+// Inline Styles -:
+// 🤷‍♀️ It is style not styl e.
+<xmp><h1 styl e = {fontSize : 12 or any Javascript Object}>Hello</h1>
+<h2>Hello Again</h2> </xmp></code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> Components</h2>
+        <pre><code class="language-js">// We can divide our website into small pieces called Components.
+// Component name must be PascalCase as Convention.
+// It is a special Function.
+// We have Class and Functional Components.
+// Component Name must Start with Capital Letter as Convention.
+// We can also pass attributes ( Called Props ) like in HTML.
+// Functional Components -: 
+    // Function Return JSX.
+    // Use it as -:
+<xmp><FunctionComponentName propName="Molik" /></xmp>
+
+// Component -:
+<xmp>function NavBar(props){
+    return(
+        <h1>Hello Ji</h1>
+    )
+}</xmp>
+</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> Props</h2>
+        <pre><code class="language-js">// Props is like attributes in HTML and parameters in Javascript.
+// It helps to pass data to Components.
+// We can pass anything (functions , state etc ) using props.
+
+// Passing Props -:
+<xmp><FunctionComponentName propName="propvalue" /></xmp>
+
+// Accept Props -:
+// Here, props is a Javascript Object.
+<xmp>function NavBar(props){
+    return(
+        // Using Props -: 
+        <h1>Hello {props.propName}</h1>
+    )
+}</xmp></code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> map() and key prop</h2>
+        <pre><code class="language-js">// When we use .map() method then it is necessary to pass ,
+// key prop ( Exact key ) to the returning element from .map().
+// key is anything unique. 
+// Keys are essential for React to be able to keep track of each ,
+// element that is being iterated over with the .map() function.
+
+<xmp>myArr.map((elem , index) => {
+    return <h1 key={index}>Hello</h1>
+})</xmp></code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> Event Handling</h2>
+        <pre><code class="language-js">// We can attach events on JSX elements only.
+// By adding props ( Like onClick etc ).
+
+// Prop name Must be camelCase.
+// As a Naming Convention event function start with hanlde.
+// Event Handling -: 
+function handleClick(){
+    console.log("Button Clicked !")
+}
+<xmp><button onClick={handleClick}>Click</button></xmp>
+
+// Passing Arguments -:
+    // 1) Way
+    // Use function () => handleClick(agr1) (Or use simple function ) inside ,
+    // onClick={} ( It is hard to write in notes hope u understand).
+    <xmp>< button onClick={}</button>}>Click< /button></xmp>
+
+    // 2 Way
+    // Use bind() (){this.handleClick.bind(this , arg1))} inside onClick={}
+    <xmp>< button onClick={}</button>}>Click< /button></xmp>
+</code></pre>
+      </li>
+
+
+      <li>
+        <h2><span class="serialNumber"></span>Hooks</h2>
+        <pre><code class="language-js">// Hooks allow function components to have access to state and other React features.
+// Hooks allow us to "hook" into React features such as state and lifecycle methods.
+
+// Rules for Hooks -: 
+    // 1) Always write it inside Component.
+    // 2) Directly import hooks or use using React.hookName.
+    // 3) Don't Call hooks inside loop, nested functions and conditionals.
+
+
+</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> useState() Hook and state</h2>
+        <pre><code class="language-js">// state allow u to change certain value in component.
+// When state changes , Components re-renders ( Which makes React Powerful without Page Loads ).
+
+import React , {useState} from 'react'
+
+const [count , setCount] = useState(InitialValue) // Or React.useState()
+// InitialValue is of any DataType.
+// We cannot directly change the state variable ( Like here count ) ,
+// We need to use setter function ( Like here setCount ) to change state variable.
+// As a Naming Convention setter function start with set. 
+
+// Change State -:
+    setCount( anyValue )  // It enhances to re-render the component.</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> useContext() Hook</h2>
+        <pre><code class="language-js">// 1) What is context and why we need it ?
+// Ans - It us used to pass directly to any child in a hieraracly, 
+// without this we need to pass data in order wise and it is so difficuilt like -:
+
+// Parent -> Child1 -> Child2 -> Child3 , We need to pass Data Parent -> Child3 
+// without context we need to passs data to Child1 then Child2 and then Child3.
+// Passing the props to all middleChild called Prop Drilling.
+
+// To use context we need to perform 3 Steps -:
+    // 1) createContext() ( In Parent )
+    // 2) Producer ( In Parent )
+    // 3) Consumer ( In Child )
+
+// In Parent create Context-:
+const fName = createContext( defaultValue )
+function App(){
+    const [count , setCount] = useState(0)
+    return (
+        // value is important ( Exact ) and b/w this Provider all have accessing fName Context.
+        // To use [count , setCount] ,  we can destructure it later.
+        <xmp><fName.Provider value={[count , setCount]}>
+            <Child3 />
+        </fName.Provider></xmp>
+    )
+}
+export {fName}
+    
+// In Child Access Context -:
+import {useContext} from react
+import {fName} from 'whatever'
+
+function Child3(){
+    const [count , setCount] = useContext(fName)
+    return(
+        // Here use it and Enjoy.
+    )
+}
+
+// In Context API the consumer part is tooo lengthy ,
+// Thats why we use useContext hook in consumers.
+</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span> useEffect Hook</h2>
+        <pre><code class="language-js">// It is used to perform extra tasks ( Called Side-Effects ).
+// Side effects means reach into the outside world. Like fetching data from an API ,
+// or working with the DOM.
+
+// useEffect take 1st parameter as Callback Function ( Called effect ) and 2nd parameter 
+// ( Optional ) array.
+
+// Callback function runs again re-rendering.
+// Callback cannot be an async Function.
+// To run it only 1st re-render pass 2nd parameter an Empty Array.
+// Or re-render depends on certain states then pass state in 2nd parameter array.
+
+import {useEffect} from react
+
+function App(){
+    useEffect(() => {
+        // Do whatever u Want.
+    },[] or [state1 , state2])
+    return <xmp><h1>Hello</h1></xmp>
+}
+
+// Cleanup Function in useEffect -: 
+// If we return a Function from useEffect then is work as Cleanup.
+// It help to clean previous state of useEffect Like -:
+// If we attach resize event on window then we will remove it ,
+// in cleanup function from effecient memory usage.</code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span>Forms</h2>
+        <pre><code class="language-js">// It is bit more complex to handle forms.
+// There are 2 types of forms
+    // 1) Controlled Components.
+    // 1) UnControlled Components ( useRef Hook and ref ).
+
+// Controlled Components -:
+// Here we need to set value , onChange .
+// To handle Complex ( or More ) inputs ( or Components ) we use name attribute.
+
+// TO save us from many states we use one state with an object.
+const [first, setfirst] = useState({
+    f_name: "",
+    sure: true,
+    job: "employed",
+    color: "",
+});
+
+// Rather than write many functions, we write one function for all inputs.
+function handleOnChange(evt) {
+    // For Checkbox ( type , checked need only for Checkbox ) we need to check here
+    const { name, value, type, checked } = evt.target;
+    setfirst((prev) => {
+        return { ...prev, [name]: type === "checkbox" ? checked : value };
+    });
+}
+<xmp><div>
+    // input and textarea are works Same.( Access value in State)
+    <input type="text" name="f_name" placeholder="Enter First Name" 
+    onChange={handleOnChange} value={first.f_name}/>
+
+    // checkbox makes differ ( Access T/F in State )
+    <input type="checkbox" name="sure" onChange={handleOnChange} checked={first.sure} />
+
+    // radio makes differ ( Access value in State)
+    <input type="radio" name="job" onChange={handleOnChange} id="employed" value="employed" />
+    <label htmlFor="employed">Employed</label>
+    <input type="radio" name="job" onChange={handleOnChange} id="unemployed" value="unemployed" />
+    <label htmlFor="unemployed">Unemployed</label>
+
+    // dropdown makes differ ( Access value in State ).
+    <select name="color" value={first.color} onChange={handleOnChange}>
+        <option value="">--Choose--</option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+    </select>
+</div></xmp></code></pre>
+      </li>
+
+      <li>
+        <h2><span class="serialNumber"></span>Conditional Rendering</h2>
+        <pre><code class="language-js">// Using -:
+    // 1) if / else 
+    // 2) Ternary Operator  with states
+    // 3) Short Circuit Operator or with states
+
+// 1) Short Circuit Operator ( && , || ) or with states -:
+
+// Can change state to show - hide Elements.
+const [shown, setShown] = useState(true);
+
+<xmp>{shown && <h1>I am Hidden</h1>}</xmp>
+
+// 2) Ternary Operator or with states -: 
+
+const [shown, setShown] = useState(true);
+
+<xmp>{shown === false ? <h1>I am First</h1> : <h1>I am Second</h1>}</xmp>
+
+// 3) if / else -: 
+// It is not at that important but it work as usually but outside,
+// the component.
+</code></pre>
+      </li>
+      
+      <li>
+        <h2><span class="serialNumber"></span>useRef Hook and ref</h2>
+        <pre><code class="language-js">// useRef hook allows to directly create a reference to the DOM element in the functional component. 
+
+// UnControlled Components -:
+// It is used to handle UnControlled Components.
+// useRef return an mutable object of property current.
+// useRef take parameter for initialValue.
+// Difference between useRef() and creating a {current: ...} object yourself is that useRef will,
+// give you the same ref object on every render.
+// Advantage -:
+    // 1) Does Not Cause Re-renders.
+    // 2) Accessing DOM Elements.
+    // 3) *Tracking State Changes.
+
+// Uses -: 
+    // 1) When we want to know how many times aut Component renders ,
+    // cannot use states as it create infinite loop for this work.
+
+import {useRef} from 'react'
+
+const input_value = useRef(null);
+function handle() {
+    console.log(input_value.current.value);
+}
+// ref attribute gave reference to the reference variable.
+<xmp><input type="text" ref={input_value} />
+<button onClick={handle}>Submit</button></xmp></code></pre>
+      </li>
+    </ol>
+  </body>
+</html>
