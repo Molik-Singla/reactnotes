@@ -350,6 +350,104 @@ function handle() {
 <xmp><input type="text" ref={input_value} />
 <button onClick={handle}>Submit</button></xmp></code></pre>
       </li>
+
+      <li>
+        <h2><span class="serialNumber"></span>React-Router v6</h2>
+        <pre><code class="language-js">// We can change the pages on our site without reload the page ,
+// Using react-router.
+
+// 1) install react-router
+<xmp>npm install react-router-dom@6</xmp>
+
+// 2) 
+import { 
+    BrowserRouter, 
+    Routes, Route , 
+    Link , 
+    NavLink , 
+    useParams , 
+    useNavigate 
+} from 'react-router-dom';
+
+// Wrap main data b/w  BrowserRouter and then b/w Routes.
+<xmp>function App() {
+    return (
+        <BrowserRouter>  // Syntax Must
+            <Routes>     // Syntax Must
+                <Route path='/' element={<Home />} />
+                <Route path='about' element={<About />} />
+                <Route path='products' element={<Products />} />
+                // Nested Routes
+                <Route path='course' element={<Products />} > 
+                    <Route path='react' element={<React />} />
+                </Route>
+                // URL params ( :productId is a URL parameter )
+                <Route path='products/:productId' element={<SingleProduct />} />
+                // For Error Page
+                <Route path='*' element={<Error />} />
+            </Routes>
+        </BrowserRouter>
+    );
+}</xmp>
+// path defines the path in url.
+// element defines which Component we want to render at specify path.
+// Can also define JSX in element.
+// * We can write Route as self closing or Open-Close tag.
+    // Self closing working as default.
+    // Open and Close tag help to define another Route with Parent Route.
+    // Like if parent Route have path="/course" and child Route have path="react" then,
+    // For course we go on "/course" and for react we go on "/course/react"
+
+// 3) Rather than a tag we use Link tag in react-router.
+<xmp><Link to='/about' className='btn'>
+    About
+</Link></xmp>
+// to use to define , in which path we wanna go.
+
+// 4) For error page
+// We use * as path if no path was matched then * path handles that.
+
+// 5) NavLink ( For style Active Route )
+// It is same as Link , But is used to style the Active Route ( In easy Way ).
+
+// Its *style* not styled here 
+< NavLink to='/about' styled ={({ isActive }) => {
+        return { color: isActive ? 'red' : 'grey' };
+    }}>
+    Home
+< / NavLink>
+
+// Rather than styles we can also use className here like -:
+className={({ isActive }) => (isActive ? 'link active' : 'link')}
+
+// isActive is by default use in NavLink
+
+// 6) useParams Hook, URL parameters 
+import { useParams } from 'react-router-dom';
+
+const { productId } = useParams();
+
+// 7) useNavigate Hook, To Navigate one page to another
+// Like we want to Navigate user to Home after Successfull Login.
+const navigate = useNavigate();
+
+navigate('/Home');
+
+// 8) Protected Route
+<xmp><ProtectedRoute user={user}>
+    <Dashboard user={user} />
+</ProtectedRoute></xmp>
+
+<xmp>import { Navigate } from 'react-router-dom';
+    const ProtectedRoute = ({ children, user }) => {
+      if (!user) {
+        return <Navigate to='/' />;
+      }
+      return children;
+    };
+export default ProtectedRoute;</xmp>
+</code></pre>
+      </li>
     </ol>
   </body>
 </html>
