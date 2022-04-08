@@ -23,9 +23,9 @@
 // 👉 JSX Expression -: 
 <xmp><h1>Hello User , My age is {20 - 1}</h1></xmp>
 // 👉 Some Changes from HTML -> JSX
-    // 👉 1) class -> className.
-    // 👉 2) for -> htmlFor.
-    // 👉 3) All self closing tags closed using /> rathar than >.
+    // 👉 1) 👍 class -> className.
+    // 👉 2) 👍 for -> htmlFor.
+    // 👉 3) 👍 All self closing tags closed using /> rathar than >.
 </code></pre>
       </li>
 
@@ -127,12 +127,12 @@ function handleClick(){
 <xmp><button onClick={handleClick}>Click</button></xmp>
 
 // 👉 Passing Arguments -:
-    // 👉 1) Way
+    // 👉 1) 👍 Way
     // 👉 Use function () => handleClick(agr1) (Or use simple function ) inside ,
     // onClick={} ( It is hard to write in notes hope u understand).
     <xmp>< button onClick={}</button>}>Click< /button></xmp>
 
-    // 👉 2 Way
+    // 👉 2) 👍 Way
     // 👉 Use bind() (){this.handleClick.bind(this , arg1))} inside onClick={}
     <xmp>< button onClick={}</button>}>Click< /button></xmp>
 </code></pre>
@@ -145,9 +145,9 @@ function handleClick(){
 // 👉 Hooks allow us to "hook" into React features such as state and lifecycle methods.
 
 // 👉 Rules for Hooks -: 
-    // 👉 1) Always write it inside Component ( At Top of a Component ).
-    // 👉 2) Directly import hooks or use using React.hookName.
-    // 👉 3) Don't Call hooks inside loop, nested functions and conditionals.</code></pre>
+    // 👉 1) 👍 Always write it inside Component ( At Top of a Component ).
+    // 👉 2) 👍 Directly import hooks or use using React.hookName.
+    // 👉 3) 👍 Don't Call hooks inside loop, nested functions and conditionals.</code></pre>
       </li>
 
       <li>
@@ -169,7 +169,7 @@ const [count , setCount] = useState(InitialValue) // 👉 Or React.useState()
 
       <li>
         <h2><span class="serialNumber"></span> useContext() Hook</h2>
-        <pre><code class="language-js">// 👉 1) What is context and why we need it ?
+        <pre><code class="language-js">// 👉 1) 👍 What is context and why we need it ?
 // 👉 Ans - It us used to pass directly to any child in a hieraracly, 
 // without this we need to pass data in order wise and it is so difficuilt like -:
 
@@ -178,9 +178,9 @@ const [count , setCount] = useState(InitialValue) // 👉 Or React.useState()
 // 👉 Passing the props to all middleChild called Prop Drilling.
 
 // 👉 To use context we need to perform 3 Steps -:
-    // 👉 1) createContext() ( In Parent )
-    // 👉 2) Producer ( In Parent )
-    // 👉 3) Consumer ( In Child )
+    // 👉 1) 👍 createContext() ( In Parent )
+    // 👉 2) 👍 Producer ( In Parent )
+    // 👉 3) 👍 Consumer ( In Child )
 
 // 👉 In Parent create Context-:
 const fName = createContext( defaultValue )
@@ -246,8 +246,8 @@ function App(){
         <h2><span class="serialNumber"></span>Forms</h2>
         <pre><code class="language-js">// 👉 It is bit more complex to handle forms.
 // 👉 There are 2 types of forms
-    // 👉 1) Controlled Components.
-    // 👉 1) UnControlled Components ( useRef Hook and ref ).
+    // 👉 1) 👍 Controlled Components.
+    // 👉 2) 👍 UnControlled Components ( useRef Hook and ref ).
 
 // 👉 Controlled Components -:
 // 👉 Here we need to set value , onChange .
@@ -295,24 +295,24 @@ function handleOnChange(evt) {
       <li>
         <h2><span class="serialNumber"></span>Conditional Rendering</h2>
         <pre><code class="language-js">// 👉 Using -:
-    // 👉 1) if / else 
-    // 👉 2) Ternary Operator  with states
-    // 👉 3) Short Circuit Operator or with states
+    // 👉 1) 👍 if / else 
+    // 👉 2) 👍 Ternary Operator  with states
+    // 👉 3) 👍 Short Circuit Operator or with states
 
-// 👉 1) Short Circuit Operator ( && , || ) or with states -:
+// 👉 1) 👍 Short Circuit Operator ( && , || ) or with states -:
 
 // 👉 Can change state to show - hide Elements.
 const [shown, setShown] = useState(true);
 
 <xmp>{shown && <h1>I am Hidden</h1>}</xmp>
 
-// 👉 2) Ternary Operator or with states -: 
+// 👉 2) 👍 Ternary Operator or with states -: 
 
 const [shown, setShown] = useState(true);
 
 <xmp>{shown === false ? <h1>I am First</h1> : <h1>I am Second</h1>}</xmp>
 
-// 👉 3) if / else -: 
+// 👉 3) 👍 if / else -: 
 // 👉 It is not at that important but it work as usually but outside,
 // the component.
 </code></pre>
@@ -329,12 +329,12 @@ const [shown, setShown] = useState(true);
 // 👉 Difference between useRef() and creating a {current: ...} object yourself is that useRef will,
 // give you the same ref object on every render.
 // 👉 Advantage -:
-    // 👉 1) Does Not Cause Re-renders.
-    // 👉 2) Accessing DOM Elements.
-    // 👉 3) *Tracking State Changes.
+    // 👉 1) 👍 Does Not Cause Re-renders.
+    // 👉 2) 👍 Accessing DOM Elements.
+    // 👉 3) 👍 *Tracking State Changes.
 
 // 👉 Uses -: 
-    // 👉 1) When we want to know how many times aut Component renders ,
+    // 👉 1) 👍 When we want to know how many times aut Component renders ,
     // cannot use states as it create infinite loop for this work.
 
 import {useRef} from 'react'
@@ -458,19 +458,19 @@ export default ProtectedRoute;</xmp>
 
       <li>
         <h2><span class="serialNumber"></span>Custom Hooks</h2>
-        <pre><code class="language-js">// Enhance reusibility of the Function.
-// Like I have to use below Code in differ Components -: 
+        <pre><code class="language-js">// 👉 Enhance reusibility of the Function.
+// 👉 Like I have to use below Code in differ Components -: 
 useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos")
       .then((res) => res.json())
       .then((data) => setData(data));
  }, []);
 
-// So I will make my Custom Hook.
-// Custom Hooks always starts with "use" as Convention,
+// 👉 So I will make my Custom Hook.
+// 👉 Custom Hooks always starts with "use" as Convention,
 // And call is as Simple Function.
 
-// Custom Hook Example -: 
+// 👉 Custom Hook Example -: 
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     useEffect(() => {
@@ -478,14 +478,46 @@ const useFetch = (url) => {
         .then((res) => res.json())
         .then((data) => setData(data));
     }, [url]);
-    return [data]; // Optional
+    return [data]; // 👉 Optional
 };
 
-// Calling Custom Hook -: 
+// 👉 Calling Custom Hook -: 
 const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
 </code></pre>
       </li>
 
+
+      <li>
+        <h2><span class="serialNumber"></span>useReducer Hook</h2>
+        <pre><code class="language-js">// 👉 Work same as useState Hook.
+// 👉 But its is usefull for managing complex states in Large Applications.
+// 👉 It is also usefull when we want to do more operations with specify state.
+
+EventHandler 
+    🔽
+  Dispatch ( Generally contain "type" and "payload" )
+    🔽
+  Reducer  ( Function which handle all Actions )
+    🔽
+State Update ( Then re-render Component )
+
+// 👉 2) 👍 Reducer Function
+function reducer(state, action) {
+    // 👉 Put if else Statements or switch Statement.
+    // 👉 We can handle any number of action as we want.
+    if (action.type === "add") return [...state, action.payload];
+    if (action.type === "del") return [state.filter((elem) => elem !== action.payload)];
+}
+// 👉 1) 👍 
+// 👉 const [state , dispatch] = useReducer(reducer , initialValue)  // 👉 Convention
+const [todos, dispatch] = useReducer(reducer, []);
+
+
+// 👉 3) 👍 Calling Dispatch Function with type and payload.  
+<xmp><button-onClick={() => dispatch({ type: "add", payload: "Buy Apples" } ) }>Inc< /button></xmp>
+<p>{todos.map((elem, ind) => elem)}</p>    
+</code></pre>
+      </li>
     </ol>
   </body>
 </html>
