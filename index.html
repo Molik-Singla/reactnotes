@@ -164,7 +164,15 @@ const [count , setCount] = useState(InitialValue) // 👉 Or React.useState()
 // 👉 As a Naming Convention setter function start with set. 
 
 // 👉 Change State -:
-    setCount( anyValue )  // 👉 It enhances to re-render the component.</code></pre>
+    setCount( anyValue )  // 👉 It enhances to re-render the component.
+
+// When we pass function to useState only runs First Time whether,
+// Simple value runs on every Re-Render.
+// Pass Function is need when we want to do hard computations in it
+const [count , setCount] = useState(() => {
+    console.log("Render Only First Time")
+    return initialValue
+})</code></pre>
       </li>
 
       <li>
