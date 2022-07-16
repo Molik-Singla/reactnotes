@@ -17,6 +17,15 @@ ol > li {
 h2 {
     width: 70vw;
     text-align: start;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
-        sans-serif;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+    pre {
+        width: 90vw;
+        font-size: 15px;
+    }
+    h2 {
+        width: 90vw;
+    }
 }
